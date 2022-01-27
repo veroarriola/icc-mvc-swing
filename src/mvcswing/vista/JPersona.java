@@ -24,7 +24,7 @@ public class JPersona extends JDialog {
 		CANCELAR;
 	}
 	
-    private final JTextField cajaNombre = new JTextField(50);
+	private final JTextField cajaNombre = new JTextField(50);
 	private final JTextField cajaDirección = new JTextField(50);
 	private final JTextField cajaTeléfono = new JTextField(37);
 	private final JTextField cajaExtensión = new JTextField(7);
@@ -32,7 +32,8 @@ public class JPersona extends JDialog {
 	private Opción opciónSeleccionada = Opción.CANCELAR;
 	
 	/**
-	 * Crea un diálogo sujeto a la ventana principal de la aplicación.
+	 * Crea un diálogo para solicitar/mostrar los datos de una persona,
+	 * sujeto a la ventana principal de la aplicación.
 	 * @param padre 
 	 */
 	public JPersona(JFrame padre) {

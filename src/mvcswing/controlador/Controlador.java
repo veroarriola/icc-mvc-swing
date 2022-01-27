@@ -16,7 +16,8 @@ import mvcswing.vista.JPersona;
 import mvcswing.vista.JVentana;
 
 /**
- *
+ * Controlador, contiene la lógica de la aplicación y establece la comunicación
+ * entre modelo y vistas.
  * @author blackzafiro
  */
 public class Controlador {
@@ -79,14 +80,14 @@ public class Controlador {
 	 * al directorio.
 	 */
 	public void agregaPersona() {
-		CoordinadorPersona coord = new CoordinadorPersona(new Persona(), dialogo);
+		CoordinadorPersona coord = new CoordinadorPersona(new Persona());
 		
 		boolean datosVálidos = false;
 		while(!datosVálidos) {
 			dialogo.setVisible(true);
 			if (dialogo.opciónSeleccionada() == JPersona.Opción.CANCELAR)  return;
 			try {
-				coord.leeNombre();
+				coord.leeNombre(dialogo);
 			} catch(ExcepciónDatoInválido ex) {
 				JOptionPane.showMessageDialog(ventanaPrincipal,
 						ex.getMessage(),

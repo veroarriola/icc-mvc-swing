@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Demo con propósito educativo sin afán de lucro ni compromiso comercial.
  */
 package mvcswing.modelo;
 
@@ -14,26 +12,24 @@ import mvcswing.vista.JPersona;
 public class CoordinadorPersona {
 	
 	private final Persona persona;
-	private final JPersona vista;
 	
 	/**
 	 * Constructor que recibe una vista de java Swing y una persona con los
 	 * datos del modelo.
-	 * @param vista 
-	 * @param persona 
+	 * @param persona Modelo
 	 */
-	public CoordinadorPersona(Persona persona, JPersona vista) {
+	public CoordinadorPersona(Persona persona) {
 		this.persona = persona;
-		this.vista = vista;
 	}
 	
 	/**
 	 * Lee el nombre propuesto desde el valor actual en la vista y lo valida
 	 * antes de asignarlo al modelo de datos.
+	 * @param vista   Diálogo que pide/muestra los datos de la persona.
 	 * @throws ExcepciónDatoInválido si el nombre es <code>null</code> o una
 	 *         cadena vacía.
 	 */
-	public void leeNombre() throws ExcepciónDatoInválido {
+	public void leeNombre(JPersona vista) throws ExcepciónDatoInválido {
 		String nombre = vista.nombre();
 		if (nombre == null || nombre.isBlank()) throw new ExcepciónDatoInválido("No se ha asignado un nombre");
 		persona.nombre(nombre);
